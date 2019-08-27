@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "yarn --cwd client start",
+    "dev": "concurrently -k \"yarn server\" \"yarn run client\""
+  }
+}
