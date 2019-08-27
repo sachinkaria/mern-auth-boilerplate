@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3001;
 
-// console.log that your server is up and running
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const routes = require('./server/routes/index');
 
-// create a GET route
-app.get('/', (req, res) => {
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-});
+//  Connect all our routes to our application
+app.use('/', routes);
+
+// Turn on that server!
+app.listen(port, () => console.log(`Listening on port ${port}`));
